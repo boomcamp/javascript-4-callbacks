@@ -125,7 +125,9 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
-
+function uniq(names, cb){
+  cb([...new Set(names)]);
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
