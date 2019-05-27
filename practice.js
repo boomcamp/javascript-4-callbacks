@@ -94,6 +94,16 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(names, name, cb){
+  for(let x in names){
+    if(names[x]== name){
+      cb(true);
+    }
+    else{
+      cb(false);
+    }
+  }
+}
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
