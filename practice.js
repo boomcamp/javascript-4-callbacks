@@ -51,6 +51,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(names, cb){
+  cb(names[names.length - 1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
