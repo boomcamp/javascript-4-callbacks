@@ -144,7 +144,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
-
+function each(names, cb){
+  for(let x in names){
+    cb(names[x], names.indexOf(names[x]));
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
