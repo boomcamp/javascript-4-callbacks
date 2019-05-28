@@ -91,7 +91,15 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
-
+function contains(names,name,cb){
+  for(val of names){
+    if(val==name){
+      cb(true);
+    }else{
+      cb(false);
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
