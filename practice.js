@@ -169,6 +169,13 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(users, id, callback){
+  for (let c=0; c<users.length; c++){
+  if (users[c].id === id){
+    return callback(users[c]);
+  }
+}
+}
 
 // Do not edit the code below.
 var users = [
