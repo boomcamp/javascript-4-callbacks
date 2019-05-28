@@ -122,6 +122,10 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(array, cb) {
+  let removeDuplicate = array.filter((e,i) => array.indexOf(e) >= i);
+  cb(removeDuplicate);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
