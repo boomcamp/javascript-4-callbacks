@@ -163,6 +163,9 @@ function getUserById(users,id,callback){
    if(i.id === id){
      user=i;
    }
+   else{
+     user=null;
+   }
   }
   return callback(user);
 }
