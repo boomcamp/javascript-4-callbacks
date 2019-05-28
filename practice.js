@@ -140,6 +140,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(arr, callback) {
+  for (val of arr) {
+    callback(val, arr.indexOf(val));
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
