@@ -170,7 +170,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(arr, id, callback){
+  for(let i=0; i<arr.length; i++){
+    if(arr[i].id === id){
+      callback(arr[i]);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
