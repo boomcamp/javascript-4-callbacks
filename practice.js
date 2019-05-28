@@ -70,7 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply (num1, num2, cb) {
+  cb(num1 * num2);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
