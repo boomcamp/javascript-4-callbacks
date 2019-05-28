@@ -96,6 +96,13 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(arr, name, callback){
+  if(arr.includes(name)){
+    return callback(true);
+  } else {
+   return callback(false);
+  }
+ }
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
