@@ -70,7 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply(a,b,callback){
+  return callback(a*b);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
