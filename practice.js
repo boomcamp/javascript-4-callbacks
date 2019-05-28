@@ -164,7 +164,7 @@ function getUserById(users,id,callback){
      user=i;
    }
    else{
-     user=null;
+     user="";
    }
   }
   return callback(user);
