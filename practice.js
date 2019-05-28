@@ -149,7 +149,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
-
+function each(arr, callback){
+  arr.forEach(function(s, index){
+    callback(s, index);
+  });
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
