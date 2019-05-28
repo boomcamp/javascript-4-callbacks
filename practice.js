@@ -133,13 +133,16 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
-
+function each (arr, cb) {
+  for (i of arr) {
+    cb (i, arr.indexOf(i));
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
 // Do not edit the code above.
-
 
 
 ////////// PROBLEM 7 //////////
@@ -150,7 +153,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById (arr, id, cb) {
+  for(i of arr) {
+    if(i.id == id) {
+      cb(i);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
