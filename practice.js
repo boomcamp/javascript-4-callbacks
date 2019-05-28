@@ -143,6 +143,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(array, cb) {
+  for(let i = 0; i < array.length; i++){
+  cb(array[i], i);
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
