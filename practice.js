@@ -73,6 +73,10 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num, num2, callback) {
+  return callback(num * num2);
+}
+
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
