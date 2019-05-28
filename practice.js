@@ -96,6 +96,10 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(array, name, callback){
+  var check = array.includes(name);
+  return callback(check);
+}
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
