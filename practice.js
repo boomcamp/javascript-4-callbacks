@@ -157,7 +157,15 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(users,id,callback){
+  var user;
+  for (i of users){
+   if(i.id === id){
+     user=i;
+   }
+  }
+  return callback(user);
+}
 // Do not edit the code below.
 var users = [
   {
