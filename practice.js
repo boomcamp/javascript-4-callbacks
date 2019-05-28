@@ -27,14 +27,16 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// Code Here
+function first(array, callback) {
+    callback(array[0]);
+}
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
-first(names, function(firstName){
-  console.log('The first name in names is ' + firstName);
-  return firstName;
+first(names, function(firstName) {
+    console.log('The first name in names is ' + firstName);
+    return firstName;
 });
 // Do not edit the code above.
 
@@ -47,12 +49,14 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-//Code Here
+function last(array, callback) {
+    callback(array[array.length - 1]);
+}
 
 // Do not edit the code below.
-last(names, function(lastName){
-  console.log('The last name in names is ' + lastName);
-  return lastName;
+last(names, function(lastName) {
+    console.log('The last name in names is ' + lastName);
+    return lastName;
 });
 // Do not edit the code above.
 
@@ -68,8 +72,8 @@ last(names, function(lastName){
 //Code Here
 
 // Do not edit the code below.
-multiply(4, 3, function(answer){
-  console.log('The answer is ' + answer); //should console.log "The answer is 12"
+multiply(4, 3, function(answer) {
+    console.log('The answer is ' + answer); //should console.log "The answer is 12"
 });
 // Do not edit the code above.
 
@@ -87,12 +91,12 @@ multiply(4, 3, function(answer){
 //Code Here
 
 // Do not edit the code below.
-contains(names, 'Oscar', function(result){
-  if(result === true){
-    console.log('Oscar is in the array');
-  } else {
-    console.log('Oscar is not in the array');
-  }
+contains(names, 'Oscar', function(result) {
+    if (result === true) {
+        console.log('Oscar is in the array');
+    } else {
+        console.log('Oscar is not in the array');
+    }
 });
 // Do not edit the code above.
 
@@ -108,8 +112,8 @@ contains(names, 'Oscar', function(result){
 //Code Here
 
 // Do not edit the code below.
-uniq(names, function(uniqArr){
-  console.log('The new names array with all the duplicate items removed is ', uniqArr);
+uniq(names, function(uniqArr) {
+    console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 // Do not edit the code above.
 
@@ -125,8 +129,8 @@ uniq(names, function(uniqArr){
 //Code Here
 
 // Do not edit the code below.
-each(names, function(item, indice){
-  console.log('The item in the ' + indice + ' position is ' + item)
+each(names, function(item, indice) {
+    console.log('The item in the ' + indice + ' position is ' + item)
 });
 // Do not edit the code above.
 
@@ -142,28 +146,27 @@ each(names, function(item, indice){
 // Code here
 
 // Do not edit the code below.
-var users = [
-  {
-    id: '12d',
-    email: 'aodhan@boom.camp',
-    name: 'Aodhan',
-    address: '167 East 500 North'
-  },
-  {
-    id: '15a',
-    email: 'greg@boom.camp',
-    name: 'Greg',
-    address: '135 East 320 North'
-  },
-  {
-    id: '16t',
-    email: 'Oscar@boom.camp',
-    name: 'Oscar',
-    address: '192 East 32 North'
-  },
+var users = [{
+        id: '12d',
+        email: 'aodhan@boom.camp',
+        name: 'Aodhan',
+        address: '167 East 500 North'
+    },
+    {
+        id: '15a',
+        email: 'greg@boom.camp',
+        name: 'Greg',
+        address: '135 East 320 North'
+    },
+    {
+        id: '16t',
+        email: 'Oscar@boom.camp',
+        name: 'Oscar',
+        address: '192 East 32 North'
+    },
 ];
 
-getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
+getUserById(users, '16t', function(user) {
+    console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
 // Do not edit the code above.
