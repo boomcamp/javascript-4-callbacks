@@ -142,6 +142,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(names, callback) {
+  names.forEach(function(value){
+    return callback(value, value.indexOf(value));
+  })
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
