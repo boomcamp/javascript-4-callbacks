@@ -1,4 +1,4 @@
-/*
+5/*
   Once you complete a problem, refresh ./SpecRunner.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
@@ -28,6 +28,9 @@
 */
 
 // Code Here
+function first(names, cb){
+  return cb(names[0]);
+}
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
@@ -48,6 +51,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(names, cb){
+  return cb(names[names.length-1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +72,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(a,b,cb){
+  return cb(a*b);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +94,12 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(array, name, cb){
+  for(let x=0; x<=array.length;x++){
+    return (array[x]===name) ? cb(true):cb(false);
+    }
+  }
+
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
@@ -106,6 +121,11 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+
+function uniq(arr, cb){
+  var newArr= Array.from(new Set(arr))
+cb(newArr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
