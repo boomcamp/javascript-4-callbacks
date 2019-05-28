@@ -127,7 +127,9 @@ contains(names, 'Oscar', function(result){
 //Code Here
 
 function uniq (array, callback) {
-
+  var duplicate =
+  array.filter(function(cur, ind, array){return array.indexOf(cur) == ind});
+  callback (duplicate);
   }
 
 // Do not edit the code below.
