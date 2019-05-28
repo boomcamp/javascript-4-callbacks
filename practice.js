@@ -28,7 +28,9 @@
 */
 
 // Code Here
-
+var first = function(arr, cb){
+  cb(arr[0]);
+}
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
@@ -48,7 +50,9 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+var last = function(arr, cb){
+  cb(arr[arr.length-1]);
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+var multiply = function(x, y, cb){
+  cb(x * y);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
@@ -85,7 +91,15 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
-
+var contains = function(arr, name, cb){
+  for (let i=0; i<arr.length; i++){
+    if(arr[i]===name){
+      cb(true);
+    }else{
+      cb(false);
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
@@ -106,7 +120,20 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
-
+var uniq = function(arr, cb){
+  var c = 1;
+  for (let i=0; i<arr.length; i++){
+    
+    for (let j=c; j<arr.length; j++){
+        
+        if(arr[i] === arr[j]){
+           arr.splice(j, 1);
+        }
+    } 
+    c++;
+  }
+  cb(arr);
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -123,7 +150,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
-
+var each = function(arr, cb){
+  arr.forEach(function(name, index){
+    cb(name, index);
+  })
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,7 +171,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+var getUserById = function(arr, id, cb){
+  for (let i=0; i<arr.length; i++){
+    if(arr[i].id == id){
+      cb(arr[i]);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
