@@ -28,11 +28,14 @@
 */
 
 // Code Here
+function first(arr, callback) {
+  callback(arr[0]);
+}
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
-first(names, function(firstName){
+first(names, function (firstName) {
   console.log('The first name in names is ' + firstName);
   return firstName;
 });
@@ -48,9 +51,12 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(arr, callback) {
+  callback(arr[arr.length-1]);
+}
 
 // Do not edit the code below.
-last(names, function(lastName){
+last(names, function (lastName) {
   console.log('The last name in names is ' + lastName);
   return lastName;
 });
@@ -66,9 +72,12 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(a, b, callback) {
+  callback(a*b);
+}
 
 // Do not edit the code below.
-multiply(4, 3, function(answer){
+multiply(4, 3, function (answer) {
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
 });
 // Do not edit the code above.
@@ -85,10 +94,17 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(arr, name, callback){
+  for(val of arr){
+    if(val === name)
+    callback(true);
+  }
+  callback(false);
+}
 
 // Do not edit the code below.
-contains(names, 'Oscar', function(result){
-  if(result === true){
+contains(names, 'Oscar', function (result) {
+  if (result === true) {
     console.log('Oscar is in the array');
   } else {
     console.log('Oscar is not in the array');
@@ -106,9 +122,12 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(arr,callback){
+  callback([...new Set(arr)]);
+}
 
 // Do not edit the code below.
-uniq(names, function(uniqArr){
+uniq(names, function (uniqArr) {
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 // Do not edit the code above.
@@ -119,13 +138,18 @@ uniq(names, function(uniqArr){
 
 /*
   Write a function called each that takes in an array of names and a callback function.
-  For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
+  For each name in the array, invoke the callback and pass in the array's value and the array's index as arguments.
 */
 
 //Code Here
+function each(arr,callback){
+  for(val of arr){
+    callback(val,arr.indexOf(val));
+  }
+}
 
 // Do not edit the code below.
-each(names, function(item, indice){
+each(names, function (item, indice) {
   console.log('The item in the ' + indice + ' position is ' + item)
 });
 // Do not edit the code above.
@@ -140,6 +164,9 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(users, id, callback){
+  users.filter(user=>{if(user.id===id)callback(user)});
+}
 
 // Do not edit the code below.
 var users = [
@@ -163,7 +190,7 @@ var users = [
   },
 ];
 
-getUserById(users, '16t', function(user){
+getUserById(users, '16t', function (user) {
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
 // Do not edit the code above.
