@@ -121,6 +121,10 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(array, callback) {
+  var uniq = [...new Set(array)];
+  return callback(uniq);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
