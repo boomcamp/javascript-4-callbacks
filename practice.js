@@ -92,8 +92,9 @@ multiply(4, 3, function(answer) {
 
 function contains(array, name, callback) {
     array.forEach(function(n) {
-        callback(name === n)
+        name === n ? callback(true) : callback(false);
     });
+
 }
 
 
@@ -116,7 +117,21 @@ contains(names, 'Oscar', function(result) {
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-//Code Here
+
+
+function uniq(array, callback) {
+    console.log(array)
+    for (i = 0; i < array.length; i++) {
+        for (j = 0; j < array.length; j++) {
+            if (i != j) {
+                if (array[i] === array[j]) {
+                    array.splice(i, 1);
+                }
+            }
+        }
+    }
+    callback(array);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr) {
@@ -133,7 +148,11 @@ uniq(names, function(uniqArr) {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-//Code Here
+function each(array, callback) {
+    array.forEach(function(name, index) {
+        callback(name, index)
+    })
+}
 
 // Do not edit the code below.
 each(names, function(item, indice) {
