@@ -26,15 +26,17 @@
   Write a function called first that takes in two parameters, an array and a callback function.
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
-
+function first(arr,callback){
+  callback(arr[0]);
+}
 // Code Here
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
 first(names, function(firstName){
-  console.log('The first name in names is ' + firstName);
-  return firstName;
+console.log('The first name in names is ' + firstName);
+return firstName;
 });
 // Do not edit the code above.
 
@@ -43,16 +45,18 @@ first(names, function(firstName){
 ////////// PROBLEM 2 //////////
 
 /*
-  Write a function called last that takes in an array and a callback function.
-  Then invoke the callback, passing in the last element in the array as the argument.
+Write a function called last that takes in an array and a callback function.
+Then invoke the callback, passing in the last element in the array as the argument.
 */
-
+function last(arr,callback){
+ callback(arr[arr.length - 1]);
+}
 //Code Here
 
 // Do not edit the code below.
 last(names, function(lastName){
-  console.log('The last name in names is ' + lastName);
-  return lastName;
+console.log('The last name in names is ' + lastName);
+return lastName;
 });
 // Do not edit the code above.
 
@@ -61,15 +65,17 @@ last(names, function(lastName){
 ////////// PROBLEM 3 //////////
 
 /*
-  Write a function called multiply that takes in three parameters: two numbers and a callback function.
-  Invoke the callback, passing in the product of the two numbers multiplied as the argument.
+Write a function called multiply that takes in three parameters: two numbers and a callback function.
+Invoke the callback, passing in the product of the two numbers multiplied as the argument.
 */
-
+function multiply(num1,num2,callback){
+  callback(num1*num2);
+}
 //Code Here
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
-  console.log('The answer is ' + answer); //should console.log "The answer is 12"
+console.log('The answer is ' + answer); //should console.log "The answer is 12"
 });
 // Do not edit the code above.
 
@@ -78,21 +84,25 @@ multiply(4, 3, function(answer){
 ////////// PROBLEM 4 //////////
 
 /*
-  Write a function called contains that takes in three parameters: an array, a name and a callback.
-  Check if the name exists in the array.
-  If it does, invoke the callback with true as the argument.
-  If the name does not exist, invoke the callback with false as the argument.
+Write a function called contains that takes in three parameters: an array, a name and a callback.
+Check if the name exists in the array.
+If it does, invoke the callback with true as the argument.
+If the name does not exist, invoke the callback with false as the argument.
 */
-
+function contains(arr,name,callback){
+ arr.forEach(key => {
+     key === name ? callback(true) : callback(false);
+ })
+}
 //Code Here
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
-  if(result === true){
-    console.log('Oscar is in the array');
-  } else {
-    console.log('Oscar is not in the array');
-  }
+if(result === true){
+  console.log('Oscar is in the array');
+} else {
+  console.log('Oscar is not in the array');
+}
 });
 // Do not edit the code above.
 
@@ -101,15 +111,18 @@ contains(names, 'Oscar', function(result){
 ////////// PROBLEM 5 //////////
 
 /*
-  Write a function called uniq that takes in an array and a callback function.
-  Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
+Write a function called uniq that takes in an array and a callback function.
+Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
-
+function uniq(arr,callback){
+let uniqArr = Array.from(new Set(arr));
+callback(uniqArr);
+}
 //Code Here
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
-  console.log('The new names array with all the duplicate items removed is ', uniqArr);
+console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 // Do not edit the code above.
 
@@ -118,15 +131,17 @@ uniq(names, function(uniqArr){
 ////////// PROBLEM 6 //////////
 
 /*
-  Write a function called each that takes in an array of names and a callback function.
-  For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
+Write a function called each that takes in an array of names and a callback function.
+For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
-
+function each(arr,callback){
+ arr.forEach(name => callback(name,arr.indexOf(name)));
+}
 //Code Here
 
 // Do not edit the code below.
 each(names, function(item, indice){
-  console.log('The item in the ' + indice + ' position is ' + item)
+console.log('The item in the ' + indice + ' position is ' + item)
 });
 // Do not edit the code above.
 
@@ -135,35 +150,39 @@ each(names, function(item, indice){
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
-  When the correct user object is found, invoke the callback with the user object as an argument.
+Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+When the correct user object is found, invoke the callback with the user object as an argument.
 */
-
+function getUserById(objectArr,id,callback){
+    objectArr.map(user => {
+        user.id === id ? callback(user) : null;
+    })
+}
 // Code here
 
 // Do not edit the code below.
 var users = [
-  {
-    id: '12d',
-    email: 'aodhan@boom.camp',
-    name: 'Aodhan',
-    address: '167 East 500 North'
-  },
-  {
-    id: '15a',
-    email: 'greg@boom.camp',
-    name: 'Greg',
-    address: '135 East 320 North'
-  },
-  {
-    id: '16t',
-    email: 'Oscar@boom.camp',
-    name: 'Oscar',
-    address: '192 East 32 North'
-  },
+{
+  id: '12d',
+  email: 'aodhan@boom.camp',
+  name: 'Aodhan',
+  address: '167 East 500 North'
+},
+{
+  id: '15a',
+  email: 'greg@boom.camp',
+  name: 'Greg',
+  address: '135 East 320 North'
+},
+{
+  id: '16t',
+  email: 'Oscar@boom.camp',
+  name: 'Oscar',
+  address: '192 East 32 North'
+},
 ];
 
 getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
+console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
 // Do not edit the code above.
