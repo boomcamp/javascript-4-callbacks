@@ -51,6 +51,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(arr, callback) {
+  callback(arr[arr.length - 1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
