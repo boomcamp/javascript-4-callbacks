@@ -121,7 +121,18 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
-
+function uniq(arr, callback){
+  let o = 1;
+  for(let i=0; i<arr.length; i++){
+    for(let j=o; j<arr.length; j++){
+      if(arr[i]===arr[j]){
+        arr.splice(j, 1);
+      }
+    }
+    o++;
+  }
+  callback(arr);
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
