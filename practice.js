@@ -96,6 +96,18 @@ multiply(4, 3, function(answer){
 
 //Code Here
 
+function contains(arr, name, callback) {
+  let isBool;
+  for(let x of arr) {
+    if(x == name) {
+      callback(true);
+    } else {
+      isBool = false;
+    }
+  }
+  callback(isBool);
+}
+
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
@@ -112,10 +124,23 @@ contains(names, 'Oscar', function(result){
 
 /*
   Write a function called uniq that takes in an array and a callback function.
-  Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
+  Remove any duplicate values from the array, and invoke the callback with the modified array as an 
+  argument.
 */
 
 //Code Here
+function uniq(arr, callback) {
+  for(let x in arr) {
+    for(let y in arr) {
+      if(y !== x) {
+        if(arr[x] == arr[y]) {
+          arr.splice(y,1);
+        }
+      }
+    }
+  }
+  callback(arr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -133,7 +158,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
-
+function each(arrName, callback) {
+  for(let x in arrName) {
+    callback(arrName[x], parseInt(x));
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -145,12 +174,19 @@ each(names, function(item, indice){
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), 
+  an id and a callback, and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
 // Code here
-
+function getUserById(arrUser, id, callback) {
+  for(let x of arrUser) {
+    if(x.id === id) {
+      callback(x);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
