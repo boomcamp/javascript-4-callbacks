@@ -27,7 +27,12 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// Code Here
+// Code Here  
+    function first(arr, callback){
+      callback(arr[0]);
+    }
+
+
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
@@ -49,6 +54,10 @@ first(names, function(firstName){
 
 //Code Here
 
+function last(arr, callback){
+  callback(arr.pop());
+}
+
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +75,10 @@ last(names, function(lastName){
 */
 
 //Code Here
+
+    function multiply(num1, num2, callback){
+      callback(num1 * num2);
+    }
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +98,17 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+
+  function contains(arr, name, callback){
+    arr.forEach(element => {
+      if(element == name){
+        callback(true);
+      }
+      else{
+        callback(false);
+      }
+    });
+  }
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
@@ -107,6 +131,10 @@ contains(names, 'Oscar', function(result){
 
 //Code Here
 
+  function uniq(arr, callback){
+    callback(arr);
+  }
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -124,6 +152,13 @@ uniq(names, function(uniqArr){
 
 //Code Here
 
+  function each(arr, callback){
+    arr.forEach(element => {
+      let index = arr.indexOf(element);
+      callback(element, index);
+    });
+  }
+
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +175,18 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+  function getUserById(
+    arr,
+    id,
+    callback
+  ){
+    arr.forEach(element => {
+      if(element.id == id){
+        callback(element);
+      }
+    });
+  }
 
 // Do not edit the code below.
 var users = [
