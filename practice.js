@@ -69,7 +69,9 @@ last(names, function(lastName) {
   Invoke the callback, passing in the product of the two numbers multiplied as the argument.
 */
 
-//Code Here
+function multiply(n1, n2, callback) {
+    callback(n1 * n2)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer) {
@@ -88,7 +90,12 @@ multiply(4, 3, function(answer) {
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here
+function contains(array, name, callback) {
+    array.forEach(function(n) {
+        callback(name === n)
+    });
+}
+
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result) {
