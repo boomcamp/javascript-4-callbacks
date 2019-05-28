@@ -52,6 +52,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(arr,callback) {
+  callback(arr[arr.length-1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -70,6 +73,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(x, y, callback) {
+  callback(x*y);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
