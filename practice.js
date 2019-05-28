@@ -164,7 +164,7 @@ each(names, function(item, indice){
 // Code here
 function getUserById(arr, id, callback) {
   for (val of arr) {
-    val.id == id ? callback(val);
+    val.id == id ? callback(val) : null;
   }
 }
 
