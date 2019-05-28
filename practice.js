@@ -124,6 +124,11 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(arr, callback){
+  const uniqueAges = arr.filter((x, i, a) => a.indexOf(x) == i)
+  callback(uniqueAges);
+}
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
