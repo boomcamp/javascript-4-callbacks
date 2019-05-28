@@ -91,7 +91,15 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
-
+var contains = function(arr, name, cb){
+  for (let i=0; i<arr.length; i++){
+    if(arr[i]===name){
+      cb(true);
+    }else{
+      cb(false);
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
