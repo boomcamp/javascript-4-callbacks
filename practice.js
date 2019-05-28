@@ -161,7 +161,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(users,id,cb){
+  for(a of users){
+    if(a.id == id){
+      cb(a);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
