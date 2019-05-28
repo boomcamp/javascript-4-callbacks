@@ -28,7 +28,9 @@
 */
 
 // Code Here
-
+function first(names,cb){
+  cb(names.shift());
+}
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
