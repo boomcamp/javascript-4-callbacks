@@ -162,6 +162,11 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(arr, id, callback) {
+  for (val of arr) {
+    val.id == id ? callback(val);
+  }
+}
 
 // Do not edit the code below.
 var users = [
