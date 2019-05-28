@@ -28,6 +28,9 @@
 */
 
 // Code Here
+function first(array, callback){
+  callback(array[0]);
+}
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
@@ -49,6 +52,11 @@ first(names, function(firstName){
 
 //Code Here
 
+function last(array, callback){
+  var newArr = array.length - 1;
+  callback(array[newArr]);
+}
+
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +74,13 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1, num2, callback){
+ 
+  var x = num1;
+  var y = num2;
+
+  callback(x*y);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -86,6 +101,14 @@ multiply(4, 3, function(answer){
 
 //Code Here
 
+function contains(array, name, callback){
+  if(array.includes(name)){
+    callback(true);
+  }else{
+    callback(false);
+  }
+}
+
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
@@ -97,7 +120,6 @@ contains(names, 'Oscar', function(result){
 // Do not edit the code above.
 
 
-
 ////////// PROBLEM 5 //////////
 
 /*
@@ -106,6 +128,11 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+
+function uniq (array, callback){
+    var arrMod = array.filter((x,y,z)=>z.indexOf(x)==y);
+    callback(arrMod);
+  }
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -124,6 +151,12 @@ uniq(names, function(uniqArr){
 
 //Code Here
 
+function each (array, callback){
+  for(var i = 0; i < array.length; i++){
+    callback(array[i],i);
+  }
+}
+
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +173,15 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+function getUserById(users, id, callback){
+  for (var i=0; i<users.length; i++){
+    if (id == users[i].id){
+      callback(users[i]);
+    }
+  }
+}
+
 
 // Do not edit the code below.
 var users = [
