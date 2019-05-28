@@ -146,6 +146,12 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(names, callback){
+  for (let c=0; c < names.length; c++){
+  callback(names[c], c);
+  }
+}
+
 
 // Do not edit the code below.
 each(names, function(item, indice){
