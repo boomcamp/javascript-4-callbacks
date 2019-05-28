@@ -28,7 +28,9 @@
 */
 
 // Code Here
-
+function first(arr,callback){
+  return callback(arr[0]);
+}
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
