@@ -159,7 +159,7 @@ function getUserById (arr, id, cb) {
       cb(i);
     }
   }
-}
+} 
 // Do not edit the code below.
 var users = [
   {
