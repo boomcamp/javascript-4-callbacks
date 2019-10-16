@@ -31,7 +31,7 @@
 // var ourArr = [1,2,3];
 function first(array, callback){
   for(i in array){
-    callback(array[0], i);
+    callback(array[0]);
   }
 }
 
@@ -57,7 +57,7 @@ first(names, function(firstName){
 //Code Here
 function last(array, callback){
   for(i in array){
-    callback(array[array.length-1], i);
+    callback(array[array.length-1]);
   }
 }
 
@@ -99,8 +99,10 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
-function contains(array, names, callback){
-  array.indexOf('Oscar') > -1 ? callback(true) : callback(false);
+function contains(array, name, callback){
+  for(i in array){
+    array[i] == name ? callback(true) : callback(false);
+  }
 }
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
@@ -143,7 +145,7 @@ uniq(names, function(uniqArr){
 
 //Code Here
 function each(names, callback){
-  for(i in names){
+  for(var i = 0; i<names.length; i++){
     callback(names[i], i);
   }
 }
