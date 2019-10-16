@@ -28,9 +28,9 @@
 */
 
 // Code Here
-var first = function(firstName, names) {
+function first(firstName, names) {
   names(firstName[0]);
-};
+}
 // Do not edit the code below.
 var names = ["Aodhan", "Greg", "Jake", "Oscar", "Aodhan", "Tanner", "Greg"];
 
@@ -48,9 +48,9 @@ first(names, function(firstName) {
 */
 
 //Code Here
-var last = function(lastName, names) {
+function last(lastName, names) {
   names(lastName[lastName.length - 1]);
-};
+}
 // Do not edit the code below.
 last(names, function(lastName) {
   console.log("The last name in names is " + lastName);
@@ -66,9 +66,9 @@ last(names, function(lastName) {
 */
 
 //Code Here
-var multiply = function(x, y, answer) {
+function multiply(x, y, answer) {
   answer(x * y);
-};
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer) {
   console.log("The answer is " + answer); //should console.log "The answer is 12"
@@ -85,7 +85,15 @@ multiply(4, 3, function(answer) {
 */
 
 //Code Here
-var contains = function(array, name, result) {};
+function contains(names, name, result) {
+  for (let val of names) {
+    if (val === name) {
+      result(true);
+    } else {
+      result(false);
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, "Oscar", function(result) {
   if (result === true) {
@@ -104,7 +112,10 @@ contains(names, "Oscar", function(result) {
 */
 
 //Code Here
-var uniq = function(uniqArr, names) {};
+function uniq(names, arr) {
+  let uniqArr = [...new Set(names)];
+  arr(uniqArr);
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr) {
   console.log(
@@ -122,7 +133,14 @@ uniq(names, function(uniqArr) {
 */
 
 //Code Here
-var each = function(names, items, indice) {};
+function each(names, index) {
+  // for (let i = 0; i < names.length - 1; i++) {
+  //   index(names[i], i);
+  // }
+  for (value of names) {
+    index(value, names.indexOf(value));
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice) {
   console.log("The item in the " + indice + " position is " + item);
@@ -137,7 +155,7 @@ each(names, function(item, indice) {
 */
 
 // Code here
-var getUserById = function(users, id, user) {};
+function getUserById(users, id, user) {}
 // Do not edit the code below.
 var users = [
   {
