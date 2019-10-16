@@ -1,4 +1,5 @@
-/*
+
+    /*
   Once you complete a problem, refresh ./SpecRunner.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
@@ -29,6 +30,10 @@
 
 // Code Here
 
+var first = function(array, callback){
+  callback(array[0]);
+}
+
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
@@ -46,6 +51,11 @@ first(names, function(firstName){
   Write a function called last that takes in an array and a callback function.
   Then invoke the callback, passing in the last element in the array as the argument.
 */
+
+
+var last = function(array, callback){
+  callback(array[array.length - 1]);
+}
 
 //Code Here
 
@@ -67,6 +77,10 @@ last(names, function(lastName){
 
 //Code Here
 
+var multiply = function(num1, num2, callback){
+  callback(num1 * num2);
+}
+
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
@@ -85,6 +99,9 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+var contains = function(names, name, callback){
+  callback(names.indexOf(name)>-1?true:false); 
+}
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
@@ -107,6 +124,19 @@ contains(names, 'Oscar', function(result){
 
 //Code Here
 
+var uniq = function(names, callback){
+  let resAr = [], i = 0;
+
+  names.map(name=>{
+    
+    names.indexOf(name,(i+1)) === -1 ? resAr.push(name): null
+    i++;
+
+  });
+
+  callback(resAr);
+}
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -123,10 +153,15 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+var each = function(names, callback){
+  for (name of names){
+    callback(name, names.indexOf(name));
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
-  console.log('The item in the ' + indice + ' position is ' + item)
+  console.log('The item in the ' + indice + ' position is ' + item);  
 });
 // Do not edit the code above.
 
@@ -140,6 +175,13 @@ each(names, function(item, indice){
 */
 
 // Code here
+var getUserById = function(users, id, callback){
+  users.map(user=>{
+    if(user.id===id){
+      callback(user);
+    }
+  });
+}
 
 // Do not edit the code below.
 var users = [
