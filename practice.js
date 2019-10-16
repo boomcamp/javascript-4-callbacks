@@ -28,6 +28,13 @@
 */
 
 // Code Here
+function first(array, callback) {
+  var result = []
+  for (var i = 0 ; i < array.length ; i++) {
+    result.push(callback(array[i]))
+  }
+  return result   
+ }
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
@@ -48,7 +55,13 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last(array, callback) {
+  var result = []
+  for (var i = 0 ; i < array.length ; i++) {
+    result.push(callback(array[i]))
+  }
+  return result   
+ }
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +79,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply(a,b, callback) {
+ callback(a*b);
+ }
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
@@ -85,7 +100,17 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
-
+function contains(arr , name, callback){
+  for(let i = 0 ; i < arr.length; i++)
+  {
+    if(arr[i] === name){
+      callback(true)
+    }
+    else{
+      callback(false)
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
@@ -106,7 +131,13 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
-
+  function uniq(arr,cb){
+    var deDuplicated = arr.filter(function(cur, indx, arr)
+    {
+      return arr.indexOf(cur) == indx
+    });
+    cb(deDuplicated)
+ }
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -123,6 +154,13 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(array,callback){
+  for(let i = 0 ; i < array.length; i++){
+    callback(array[i],i)
+  }
+
+}
+
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,7 +178,14 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(users,id,callback){
+  for(let i = 0 ; i < users.length; i++){
+    if(id === users[i].id){
+    callback(users[i]);
+  
+  }
+}
+}
 // Do not edit the code below.
 var users = [
   {
