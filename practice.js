@@ -28,7 +28,9 @@
 */
 
 // Code Here
-
+function first(arr,cb){
+  return cb(arr[0]);
+}
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
@@ -49,6 +51,10 @@ first(names, function(firstName){
 
 //Code Here
 
+function last(arr,cb){
+  return cb(arr[arr.length-1]);
+}
+
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +72,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply(x,y,cb){
+  return cb(x * y);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log "The answer is 12"
@@ -85,7 +93,15 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
-
+function contains(arrr,name,cb){
+  for(let i=0; i<arrr.length; i++){
+    if(arrr[i] === name){
+      return cb(true);
+    }else{
+      return cb(false);
+    }
+  }
+}
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
   if(result === true){
@@ -106,6 +122,17 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(ar,cb){
+    var obj = {};
+    var ret_arr = [];
+    for (var i = 0; i < ar.length; i++) {
+        obj[ar[i]] = true;
+    }
+    for (var key in obj) {
+        ret_arr.push(key);
+    }
+    return cb(ret_arr);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +150,17 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(names,cb){
+  indice = 0;
+  names.forEach(element => {
+    indice += 1;
+    return cb(element,indice)
+  });
+  
+  // for(let i=0;i<names.length;i++){
+  //   return cb(names[i], i, names);
+  // }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,7 +178,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(users,id,cb){
+  for(let i=0; i<users.length;i++){
+    if(users[i].id != ' '){
+      return cb(users[i]);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
