@@ -11,7 +11,7 @@
 
   sayHi('Hi Katie', function(thingToSay){
     alert(thingToSay);
-  });
+  });p
 
   It would be your job to create the sayHi function:
 
@@ -28,6 +28,9 @@
 */
 
 // Code Here
+function first(arr, callback){
+  return callback(arr[0]) 
+}
 
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
@@ -48,6 +51,10 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(arr, callback){
+  return callback(arr[arr.length-1])
+
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +73,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(x, y, callback){
+  return callback(x*y)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +95,16 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(arr, name, callback){
+  for(i = 0; i < arr.length; i++){
+    if(arr[i] == name){
+      return callback(true)
+    }
+    else{
+      return callback(false)
+    }
+  }
+}
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
@@ -106,6 +126,10 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(arr, callback){
+  let newArr = [...new Set(arr)];
+  return callback(newArr); 
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +147,13 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
+function each(arr, bins){
+  let random = 0;
+  arr.forEach(element => {
+    random++;
+    return bins(element, random);
+  });
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,6 +171,13 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(arr, id, callback){
+  for(i=0; i<arr.length; i++){
+    if(id!=' '){
+      return callback(arr[i])
+    }
+  }
+}
 
 // Do not edit the code below.
 var users = [
