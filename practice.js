@@ -28,7 +28,10 @@
 */
 
 // Code Here
-
+function first(arr, callback)
+{
+  callback(arr[0])
+}
 // Do not edit the code below.
 var names = ['Aodhan', 'Greg', 'Jake', 'Oscar', 'Aodhan', 'Tanner', 'Greg'];
 
@@ -48,7 +51,10 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+ function last(arr, callback)
+{
+  callback(arr[arr.length - 1])
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +72,10 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(a, b, callback)
+{
+  callback(a*b)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +95,17 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here
+function contains(arr, name, callback)
+{
+if(arr.includes(name))
+{
+  callback(true)
+}
+else
+{
+  callback(false)
+}
+}
 
 // Do not edit the code below.
 contains(names, 'Oscar', function(result){
@@ -106,6 +127,9 @@ contains(names, 'Oscar', function(result){
 */
 
 //Code Here
+function uniq(arr, callback){
+callback(Array.from(new Set(arr)))
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,7 +147,10 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here
-
+function each(names, callback)
+{
+names.map((a, index) => callback(a, index))
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,7 +167,11 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(users, id, callback)
+{
+  users.find(x => (x.id === id ? callback(x) : false));
 
+}
 // Do not edit the code below.
 var users = [
   {
