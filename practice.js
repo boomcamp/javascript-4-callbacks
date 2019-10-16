@@ -140,7 +140,7 @@ each(names, function(item, indice) {
 */
 
 function getUserById(users, id, callback) {
-   users.find(users => (users.id === id ? callback(users) : false));
+   users.find(i => (i.id === id ? callback(i) : false));
 }
 
 // Do not edit the code below.
