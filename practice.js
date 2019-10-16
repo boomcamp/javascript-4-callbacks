@@ -66,7 +66,9 @@ last(names, function(lastName) {
 */
 
 //Code Here
-
+var multiply = function(x, y, answer) {
+  answer(x * y);
+};
 // Do not edit the code below.
 multiply(4, 3, function(answer) {
   console.log("The answer is " + answer); //should console.log "The answer is 12"
@@ -83,7 +85,7 @@ multiply(4, 3, function(answer) {
 */
 
 //Code Here
-
+var contains = function(array, name, result) {};
 // Do not edit the code below.
 contains(names, "Oscar", function(result) {
   if (result === true) {
@@ -102,7 +104,7 @@ contains(names, "Oscar", function(result) {
 */
 
 //Code Here
-
+var uniq = function(uniqArr, names) {};
 // Do not edit the code below.
 uniq(names, function(uniqArr) {
   console.log(
@@ -120,7 +122,7 @@ uniq(names, function(uniqArr) {
 */
 
 //Code Here
-
+var each = function(names, items, indice) {};
 // Do not edit the code below.
 each(names, function(item, indice) {
   console.log("The item in the " + indice + " position is " + item);
@@ -135,7 +137,7 @@ each(names, function(item, indice) {
 */
 
 // Code here
-
+var getUserById = function(users, id, user) {};
 // Do not edit the code below.
 var users = [
   {
