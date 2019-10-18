@@ -1,4 +1,6 @@
 /*
+  Note: use var for declaring variables
+
   Once you complete a problem, refresh ./SpecRunner.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
@@ -10,7 +12,7 @@
   Here's an example of code that will be given to you:
 
   sayHi('Hi Katie', function(thingToSay){
-    alert(thingToSay);
+    console.log(thingToSay);
   });
 
   It would be your job to create the sayHi function:
@@ -19,6 +21,7 @@
     cb(str);
   }
 */
+
 
 ////////// PROBLEM 1 //////////
 
